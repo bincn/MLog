@@ -26,5 +26,8 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.2.0'
     testCompile 'junit:junit:4.12'
+
+//    compile 'com.github.mawb23.mlog:library:0.5.0'
+
     compile project(':library')
 }
