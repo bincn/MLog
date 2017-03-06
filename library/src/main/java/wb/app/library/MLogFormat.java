@@ -40,11 +40,11 @@ public class MLogFormat {
   // Length: 100.
   private static final String TOP_HORIZONTAL_BORDER
       = "╔═════════════════════════════════════════════════"
-      + "══════════════════════════════════════════════════";
+      + "══════════════════════════════";
   // Length: 100.
   private static final String BOTTOM_HORIZONTAL_BORDER
       = "╚═════════════════════════════════════════════════"
-      + "══════════════════════════════════════════════════";
+      + "══════════════════════════════";
 
   // 控制台打印内容的格式
   private static final String PRINT_CONSOLE_FORMAT_MESSAGE

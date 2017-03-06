@@ -24,35 +24,35 @@ public class MLog {
   }
 
   public static void d(@NonNull String message) {
-    print(Log.DEBUG, null, message);
+    print(false, Log.DEBUG, null, message);
   }
 
   public static void d(@NonNull String tag, @NonNull String message) {
-    print(Log.DEBUG, tag, message);
+    print(false, Log.DEBUG, tag, message);
   }
 
   public static void i(@NonNull String message) {
-    print(Log.INFO, null, message);
+    print(false, Log.INFO, null, message);
   }
 
   public static void i(@NonNull String tag, @NonNull String message) {
-    print(Log.INFO, tag, message);
+    print(false, Log.INFO, tag, message);
   }
 
   public static void e(@NonNull String message) {
-    print(Log.ERROR, null, message);
+    print(false, Log.ERROR, null, message);
   }
 
   public static void e(@NonNull String tag, @NonNull String message) {
-    print(Log.ERROR, tag, message);
+    print(false, Log.ERROR, tag, message);
   }
 
   public static void json(@NonNull String message) {
-    print(JSON, null, message);
+    print(true, JSON, null, message);
   }
 
   public static void json(@NonNull String tag, @NonNull String message) {
-    print(JSON, tag, message);
+    print(true, JSON, tag, message);
   }
 
   /**
@@ -62,7 +62,7 @@ public class MLog {
    * @param tag     标签
    * @param message 信息
    */
-  private static void print(int level, String tag, String message) {
+  private static void print(boolean isJson, int level, String tag, String message) {
     if (!mIsShowLog) {
       return;
     }
@@ -75,19 +75,16 @@ public class MLog {
       tag = MLogFormat.getName(element.getClassName(), true);
     }
 
-    switch (level) {
-      case JSON:
-        print(true, level, tag, message, element);
-        break;
+    if (isJson && level == JSON) {
+      print(true, level, tag, message, element);
 
-      default:
-        print(false, level, tag, message, element);
-        break;
+    } else {
+      print(false, level, tag, message, element);
     }
   }
 
   /**
-   * 区分普通日志和 Json 格式日志
+   * 日志打印
    *
    * @param isJson  是否打印 Json
    * @param level   级别
@@ -135,6 +132,6 @@ public class MLog {
    * @param message 消息
    */
   private static void printChunk(int level, String tag, String message) {
-    Log.println(level, tag, message);
+    android.util.Log.println(level, tag, message);
   }
 }

@@ -7,7 +7,7 @@ android {
     buildToolsVersion "25.0.2"
 
     defaultConfig {
-        minSdkVersion 21
+        minSdkVersion 14
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -27,7 +27,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.2.0'
 }
 
-version = "0.5.0" //版本号，以后每次更新 library 都要更改
+version = "0.6.0" //版本号，以后每次更新 library 都要更改
 
 def siteUrl = 'https://github.com/mawb23/MLog'      // 项目的主页
 def gitUrl = 'https://github.com/mawb23/MLog.git'   // Git仓库的url
