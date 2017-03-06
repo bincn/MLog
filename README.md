@@ -11,11 +11,11 @@ Android logger, simple and pretty (updating)
 
 ### Download
 
-JCenter
+Gradle
 
 <pre>
 dependencies {
-    compile 'com.github.mawb23.mlog:library:0.5.0'
+    compile 'com.github.mawb23.mlog:library:0.6.0'
 }
 </pre>
 
