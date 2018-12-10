@@ -2,6 +2,7 @@ package wb.app.mlogdemo;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 
 import wb.app.library.MLog;
